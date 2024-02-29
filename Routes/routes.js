@@ -23,10 +23,10 @@ router.get('/allusers',usercontroller.getallusers)
 
 router.delete('/deleteuser',usercontroller.deleteuser)
 
-// router.get('/admin/getbikes',bikeController.getbikes)
+// router.get('/admin/admingetfur',furController.getfur)
 
-// router.delete('/deletebike',bikeController.deletebike)
+router.delete('/deletefur',furController.deletefur)
 
-
+router.put('/edituser:id',usercontroller.edituser)
 // export router
 module.exports = router

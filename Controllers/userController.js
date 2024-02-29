@@ -76,3 +76,25 @@ exports.deleteuser = async(req,res)=>{
 
     }
 }
+
+exports.edituser=async(req,res)=>{
+    // const {userid}=req.body
+    const {_id,username,email,mobile,password,access} = req.body
+    const {id}=req.params
+
+    try{
+      const updateuser=await users.findByIdAndUpdate({_id:id},{
+        username,mobile,email,password,access
+    },{new:true})
+
+    await updateuser.save()
+    res.status(200).json(updateuser)
+
+
+    }catch(err){
+        res.status(401).json(`Error!!! Transaction failed : ${err}`)
+
+    }
+    
+
+}

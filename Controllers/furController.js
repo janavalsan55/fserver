@@ -1,12 +1,12 @@
 const furs = require('../Models/furSchema')
 
 
-// addbike
+// addfur
 exports.addfurs = async(req,res)=>{
     console.log("Inside add functions");
     const {pname,price,overview,mobile,uname,place,userid,access}=req.body
     const pimage=req.file.filename
-    // console.log(`${manufactor},${model}`);
+   
 
    
     try{
@@ -39,15 +39,15 @@ exports.getfur = async(req,res)=>{
 }
 
 
-// exports.deletebike = async(req,res)=>{
-//     const {bikeid}=req.body
-//     try{
-//         await bikes.findByIdAndDelete({_id:bikeid})
-//         res.status(200).json("Deleted")
+exports.deletefur = async(req,res)=>{
+    const {fid}=req.body
+    try{
+        await furs.findByIdAndDelete({_id:fid})
+        res.status(200).json("Deleted")
 
-//     }
-//     catch(err){
-//         res.status(401).json(`Error!!! Transaction failed: ${err}`)
+    }
+    catch(err){
+        res.status(401).json(`Error!!! Transaction failed: ${err}`)
 
-//     }
-// }
+    }
+}

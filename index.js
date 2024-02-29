@@ -29,7 +29,7 @@ fserver.use('/uploads',express.static('./uploads'))
 
 // to run server app
 fserver.listen(PORT,()=>{
-    console.log(`Xgarage server started at port ${PORT} `);
+    console.log(`Muebles server started at port ${PORT} `);
 })
 
 
@@ -37,3 +37,4 @@ fserver.listen(PORT,()=>{
 fserver.get('/',(req,res)=>{
     res.send(`<h1>Project Fair Server Started!!!</h1>`)
 })
+// Xgarage
